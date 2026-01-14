@@ -1,0 +1,133 @@
+﻿<Window x:Class="CalcLab.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalcLab"
+        mc:Ignorable="d"
+        Title="CalcLab" Height="600" Width="360">
+    <Grid Margin="9">
+        <!-- Margin values is Left Top Right Bottom -->
+        <!-- Single margin value is applied to all. -->
+        <!--
+        <StackPanel VerticalAlignment="Center"
+                    Margin="30">
+            <Label Content="Result"
+                   FontSize="26"
+                   HorizontalContentAlignment="Center"
+                   Margin="0,9,0,9"/>
+            <TextBox Text="0"
+                     FontSize="26"
+                     HorizontalContentAlignment="Right"
+                     Margin="0,9,0,9"/>
+            <TextBox Text="0"
+                     FontSize="26"
+                     HorizontalContentAlignment="Right"
+                     Margin="0,9,0,9" />
+            <Button Content="Compute"
+                    Background="DodgerBlue"
+                    Foreground="White"
+                    FontSize="23"/>
+        </StackPanel
+        -->
+        
+        <Grid.ColumnDefinitions>
+            <!-- divide space into amount of stars -->
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label x:Name="labelResult"
+            Content="0" 
+               HorizontalAlignment="Right"
+               VerticalAlignment="Bottom" 
+               FontSize="60"
+               Grid.ColumnSpan="4" />
+
+        <Button x:Name="btnAC"
+                Style="{StaticResource styleBtnMisc}"
+                Content="AC" Grid.Row="1"/>
+        <Button x:Name="btnNegative"
+                Style="{StaticResource styleBtnMisc}"
+                Content="+/-" Grid.Row="1" Grid.Column="1" />
+        <Button x:Name="btnPercentage"
+                Style="{StaticResource styleBtnMisc}"
+                Content="%" Grid.Row="1" Grid.Column="2"/>
+        <Button x:Name ="btnDivide"
+                Style="{StaticResource styleBtnOperators}"
+                Click="btnOperation_Click"
+                Content="/" Grid.Row="1" Grid.Column="3" />
+
+        <Button x:Name="btnSeven" 
+                Style="{StaticResource styleBtnNumber}"
+                Click="btnNumber_Click"
+                Content="7" Grid.Row="2" />
+        <Button x:Name="btnEight"
+                Style="{StaticResource styleBtnNumber}"
+                Click="btnNumber_Click"
+                Content="8" Grid.Row="2" Grid.Column="1"  />
+        <Button x:Name="btnNine"
+                Style="{StaticResource styleBtnNumber}"
+                Click="btnNumber_Click"
+                Content="9" Grid.Row="2" Grid.Column="2"  />
+        <Button x:Name="btnTimes"
+                Style="{StaticResource styleBtnOperators}"
+                Click="btnOperation_Click"
+                Content="*" Grid.Row="2" Grid.Column="3"  />
+
+        <Button x:Name="btnFours"
+                Style="{StaticResource styleBtnNumber}"
+                Click="btnNumber_Click"
+                Content="4" Grid.Row="3" />
+        <Button x:Name="btnFive"
+                Style="{StaticResource styleBtnNumber}"
+                Click="btnNumber_Click"
+                Content="5" Grid.Row="3" Grid.Column="1"  />
+        <Button x:Name="btnSix"
+                Style="{StaticResource styleBtnNumber}"
+                Click="btnNumber_Click"
+                Content="6" Grid.Row="3" Grid.Column="2"  />
+        <Button x:Name="btnMinus"
+                Style="{StaticResource styleBtnOperators}"
+                Click="btnOperation_Click"
+                Content="-" Grid.Row="3" Grid.Column="3" />
+
+        <Button x:Name="btnOne"
+                Style="{StaticResource styleBtnNumber}"
+                Click="btnNumber_Click"
+                Content="1" Grid.Row="4" />
+        <Button x:Name="btnTwo"
+                Style="{StaticResource styleBtnNumber}"
+                Click="btnNumber_Click"
+                Content="2" Grid.Row="4" Grid.Column="1"  />
+        <Button x:Name="btnThree"
+                Style="{StaticResource styleBtnNumber}"
+                Click="btnNumber_Click"
+                Content="3" Grid.Row="4" Grid.Column="2"  />
+        <Button x:Name="btnPlus"
+                Style="{StaticResource styleBtnOperators}"
+                Click="btnOperation_Click"
+                Content="+" Grid.Row="4" Grid.Column="3" />
+
+        <Button x:Name="btnZero"
+                Style="{StaticResource styleBtnNumber}"
+                Click="btnNumber_Click"
+                Content="0" Grid.Row="5" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnPoint"
+                Style="{StaticResource styleBtnNumber}"
+                Content="." Grid.Row="5" Grid.Column="2"  />
+        <Button x:Name="btnEquals"
+                Style="{StaticResource styleBtnOperators}"
+                Content="=" Grid.Row="5" Grid.Column="3"  />
+    </Grid>
+</Window>
